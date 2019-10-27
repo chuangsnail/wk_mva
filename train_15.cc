@@ -41,6 +41,7 @@ void train_15()
 	dataloader->AddVariable("hadb_probb",'D');
 	dataloader->AddVariable("hadb_probbb",'D');
 	*/
+
 	dataloader->AddVariable("top_mass",'D');
 	dataloader->AddVariable("w_mass",'D');
 	//dataloader->AddVariable("top_mass_dev",'D');
@@ -49,11 +50,11 @@ void train_15()
     dataloader->AddVariable("j1j2_sumPt",'D');
     dataloader->AddVariable("j1j2_absdelEta",'D');
     dataloader->AddVariable("j1j2_delPhi",'D');
-
+	
     //dataloader->AddVariable("lepblep_sumPt",'D');
     //dataloader->AddVariable("lepblep_absdelEta",'D');
     //dataloader->AddVariable("lepblep_delPhi",'D');
-
+	
     dataloader->SetWeightExpression("evt_weight");
     
     dataloader->AddSignalTree(cor,1.);
@@ -71,5 +72,7 @@ void train_15()
     
     fout->Write();
     fout->Close();
+
+	//Hello!
     
 }
