@@ -5,19 +5,19 @@
 
 using namespace TMVA;
 
-void train_13()
+void train_15()
 {
     TChain* cor = new TChain("correct");
     TChain* incor = new TChain("incorrect");
     
-    cor->Add( "/wk_cms2/cychuang/CMSSW_9_4_2/src/wk_mva/files/st07_*.root" );
-    incor->Add( "/wk_cms2/cychuang/CMSSW_9_4_2/src/wk_mva/files/st07_*.root" );
+    cor->Add( "/wk_cms2/cychuang/trained_files/st08_*.root" );
+    incor->Add( "/wk_cms2/cychuang/trained_files/st08_*.root" );
     
-    TFile* fout = new TFile("train_13.root", "recreate");
+    TFile* fout = new TFile("train_15.root", "recreate");
 
     TMVA::Factory* factory = new TMVA::Factory("TMVAClassification",fout,"V:!Silent:Color:Transformations=I:DrawProgressBar:AnalysisType=Classification");
     
-    TMVA::DataLoader* dataloader = new TMVA::DataLoader("train_13");
+    TMVA::DataLoader* dataloader = new TMVA::DataLoader("train_15");
    
    /*	
     dataloader->AddVariable("hadb_Pt",'D');
